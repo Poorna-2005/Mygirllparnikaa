@@ -113,23 +113,10 @@ pointer-events:none;
 <script>
 
 // SHA-256 function
-async function sha256(message){
-const msgBuffer = new TextEncoder().encode(message);
-const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-const hashArray = Array.from(new Uint8Array(hashBuffer));
-return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
-// Password check
-async function check(){
+function check(){
 const password = document.getElementById("pass").value;
 
-// SHA-256 hash of: sonaakanha0521
-const correctHash = "5a2c6b3d6c2a0cb66a6d8f3f6c6fdc4e2d6a1e6cb8cdb6d39d8f7a2c8f0e6a5d";
-
-const enteredHash = await sha256(password);
-
-if(enteredHash === correctHash){
+if(password === "sonaakanha0521"){
 document.getElementById("passwordPage").style.display="none";
 document.getElementById("main").style.display="block";
 document.getElementById("music").play();
