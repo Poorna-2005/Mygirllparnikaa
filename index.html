@@ -148,6 +148,7 @@ style="background:#ff0033;color:white;border:none;padding:10px 20px;border-radiu
 Close ❤️
 </button>
 </div>
+  </div>
   <div class="section">
 <h2 id="proposalText">Will You Marry Me? 💍</h2>
 
@@ -164,8 +165,8 @@ ALWAYS YES 💖
 </button>
 
 </div>
-</div>
-
+</div>  <!-- CLOSE #main -->
+<canvas id="canvas"></canvas>
 <script>
 
 // SHA-256 function
@@ -189,9 +190,10 @@ i=(i+1)%images.length;
 document.getElementById("slide").src=images[i];
 },3000);
 
-// Fireworks
 function fireworks(){
 var canvas=document.getElementById("canvas");
+if(!canvas) return;   // prevents crash
+
 var ctx=canvas.getContext("2d");
 canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
