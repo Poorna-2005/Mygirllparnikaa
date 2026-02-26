@@ -100,6 +100,29 @@ pointer-events:none;
 <div>💍 Forever – I Choose You Always</div>
 </div>
 
+  <!-- HIDDEN FEELINGS -->
+<div class="section">
+<button onclick="showFeelings()" 
+style="display:block;margin:40px auto;padding:12px 25px;
+background:transparent;
+color:#ffccd5;
+border:1px solid #ffccd5;
+border-radius:25px;
+font-size:15px;
+letter-spacing:1px;
+cursor:pointer;">
+Hidden Feelings
+</button>
+
+<div id="hiddenMessage" 
+style="display:none;max-width:700px;margin:40px auto;
+color:white;text-align:center;font-size:18px;
+line-height:1.8;opacity:0;transition:opacity 2s ease;">
+
+You feel like the quiet pause between my thoughts, where everything finally makes sense — not a spark that fades in the dark, but a steady flame that refuses to die. With you, love is not a question; it is the calm answer I carry within me every day. I don’t want to rush through life beside you — I want to walk slowly, noticing the little things, growing gently, choosing each other again and again. And if I could choose one soul to walk beside me through every version of this life, in every season and every age, it would always be you — my love, my forever, my best friend. ❤️✨
+
+</div>
+</div>
 <!-- PROPOSAL -->
 <div class="section">
 <h2>Will You Marry Me? 💍</h2>
@@ -148,6 +171,13 @@ Math.random()*canvas.height,
 4,0,Math.PI*2);
 ctx.fill();
 }
+}
+  function showFeelings(){
+let msg = document.getElementById("hiddenMessage");
+msg.style.display = "block";
+setTimeout(() => {
+msg.style.opacity = "1";
+},100);
 }
 </script>
 
