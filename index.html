@@ -62,6 +62,57 @@ top:0;
 left:0;
 pointer-events:none;
 }
+  /* 🦄 Unicorn Walking On Letter Top Border */
+.unicorn-top-container{
+position:absolute;
+top:-60px;   /* adjust if needed */
+right:-120px;
+animation: walkTop 12s linear infinite;
+z-index:20;
+}
+
+.unicorn-top{
+width:95px;
+animation: bounceTop 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes walkTop{
+0%{ right:-120px; }
+100%{ right:110%; }
+}
+
+@keyframes bounceTop{
+0%{ transform:translateY(0px) rotate(-3deg); }
+100%{ transform:translateY(-8px) rotate(3deg); }
+}
+
+/* Sparkles */
+.sparkle-top{
+position:absolute;
+width:6px;
+height:6px;
+background:#ffffff;
+border-radius:50%;
+opacity:0.8;
+animation:sparkleFade 1.5s linear infinite;
+}
+
+.sparkle-top:nth-child(2){
+left:-15px;
+top:15px;
+animation-delay:0.3s;
+}
+
+.sparkle-top:nth-child(3){
+left:-30px;
+top:5px;
+animation-delay:0.6s;
+}
+
+@keyframes sparkleFade{
+0%{ transform:scale(1); opacity:1; }
+100%{ transform:scale(0.3); opacity:0; }
+}
 </style>
 </head>
 
@@ -127,15 +178,18 @@ align-items:center;
 z-index:999;
 ">
 
-<div style="
-background:#1a0008;
+<div id="letterBox" style="
+position:relative;
+background:linear-gradient(135deg,#2a003f,#ff66c4);
 padding:30px;
-border-radius:15px;
+border-radius:20px;
 max-width:80%;
-color:#ffccd5;
+color:#fff0f5;
 line-height:1.8;
-box-shadow:0 0 40px rgba(255,0,70,0.5);
+box-shadow:0 0 50px rgba(255,105,180,0.7);
 animation:fadeIn 1.5s ease;
+overflow:visible;
+border-top:4px solid #ffffff;
 ">
 
 <p>
@@ -147,8 +201,15 @@ You feel like the quiet pause between my thoughts, where everything finally make
 style="background:#ff0033;color:white;border:none;padding:10px 20px;border-radius:20px;">
 Close ❤️
 </button>
+
+<!-- 🦄 Unicorn On Top Border -->
+<div class="unicorn-top-container">
+<img src="unicorn.png" class="unicorn-top">
+<div class="sparkle-top"></div>
+<div class="sparkle-top"></div>
 </div>
-  </div>
+
+</div>
   <div class="section">
 <h2 id="proposalText">Will You Marry Me? 💍</h2>
 
